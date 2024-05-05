@@ -30,8 +30,8 @@ jobs:
 
     - name: Terraform Apply
       env:
-        DB_NAME: ${{ env.DB_NAME }}
-        DB_USER: ${{ env.DB_USER }}
-        PARAM_GROUP_NAME: ${{ env.PARAM_GROUP_NAME }}
+        DB_NAME: postgres
+        DB_USER: postgres
+        PARAM_GROUP_NAME: postgres
         DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
       run: terraform apply -auto-approve -var DB_NAME=$DB_NAME -var DB_USER=$DB_USER -var PARAM_GROUP_NAME=$PARAM_GROUP_NAME -var DB_PASSWORD=$DB_PASSWORD 
