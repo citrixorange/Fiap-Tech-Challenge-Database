@@ -42,4 +42,4 @@ jobs:
         TF_VAR_DB_USER: ${{ env.DB_USER }}
         TF_VAR_PARAM_GROUP_NAME: ${{ env.PARAM_GROUP_NAME }}
         TF_VAR_DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-      run: terraform apply -auto-approve
+      run: terraform apply -auto-approve -var TF_VAR_DB_NAME=$TF_VAR_DB_NAME -var TF_VAR_DB_USER=$TF_VAR_DB_USER -var TF_VAR_PARAM_GROUP_NAME=$TF_VAR_PARAM_GROUP_NAME  -var TF_VAR_DB_PASSWORD=$TF_VAR_DB_PASSWORD 
