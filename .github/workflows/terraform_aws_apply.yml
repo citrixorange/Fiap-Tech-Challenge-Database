@@ -30,7 +30,7 @@ jobs:
 
     - name: Terraform Apply
       run: terraform apply -auto-approve
-      with:
+      env:
         DB_NAME: ${{ env.DB_NAME }}
         DB_USER: ${{ env.DB_USER }}
         PARAM_GROUP_NAME: ${{ env.PARAM_GROUP_NAME }}
