@@ -28,6 +28,14 @@ jobs:
     - name: Terraform Init
       run: terraform init
 
+    - name: Echo
+      env:
+        TF_VAR_DB_NAME: ${{ env.DB_NAME }}
+        TF_VAR_DB_USER: ${{ env.DB_USER }}
+        TF_VAR_PARAM_GROUP_NAME: ${{ env.PARAM_GROUP_NAME }}
+        TF_VAR_DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+      run: echo "$TF_VAR_DB_USER"
+
     - name: Terraform Apply
       env:
         TF_VAR_DB_NAME: ${{ env.DB_NAME }}
