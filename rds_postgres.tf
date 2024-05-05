@@ -1,7 +1,9 @@
+#Providing AWS Region
 provider "aws" {
   region = "us-east-1"
 }
 
+#Providing RD resource
 resource "aws_db_instance" "tech_challenge_postgres_instance" {
   identifier           = "tech-challenge-postgres-db"
   allocated_storage    = 20
