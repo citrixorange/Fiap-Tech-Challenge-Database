@@ -1,5 +1,5 @@
-#Declaring Environment Variables Test
-variable "DB_NAME" {}
+#Declaring Environment Variables Test Agora vai
+variable "DB_NAME" {} 
 variable "DB_USER" {}
 variable "DB_PASSWORD" {}
 variable "PARAM_GROUP_NAME" {}
