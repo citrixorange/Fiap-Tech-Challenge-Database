@@ -1,4 +1,4 @@
-#Providing AWS Region
+#Providing AWS Region Teste
 provider "aws" {
   region = "us-east-1"
 }
