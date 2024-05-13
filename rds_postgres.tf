@@ -1,4 +1,4 @@
-#Declaring Environment Variables
+#Declaring Environment Variables Test
 variable "DB_NAME" {}
 variable "DB_USER" {}
 variable "DB_PASSWORD" {}
