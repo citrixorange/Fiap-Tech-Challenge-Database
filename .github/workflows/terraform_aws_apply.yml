@@ -16,8 +16,8 @@ jobs:
     - name: Set up AWS CLI
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-access-key-id: ${{ secrets.AWS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_KEY_SECRET }}
         aws-region: us-east-1
 
     - name: Install Terraform
@@ -29,4 +29,9 @@ jobs:
       run: terraform init
 
     - name: Terraform Apply
-      run: terraform apply -auto-approve
+      env:
+        DB_NAME: postgres
+        DB_USER: postgres
+        PARAM_GROUP_NAME: postgres
+        DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+      run: terraform apply -auto-approve -var DB_NAME=$DB_NAME -var DB_USER=$DB_USER -var PARAM_GROUP_NAME=$PARAM_GROUP_NAME -var DB_PASSWORD=$DB_PASSWORD 

@@ -1,3 +1,9 @@
+#Declaring Environment Variables Test Agora vai
+variable "DB_NAME" {} 
+variable "DB_USER" {}
+variable "DB_PASSWORD" {}
+variable "PARAM_GROUP_NAME" {}
+
 #Providing AWS Region
 provider "aws" {
   region = "us-east-1"
